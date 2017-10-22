@@ -1,4 +1,5 @@
-require_relative('../models/animal.rb')
+require( 'pry' )
+require_relative( '../models/animal.rb' )
 
 animal_1 = Animal.new({
   'name' => 'Arf Vader',
@@ -8,3 +9,6 @@ animal_1 = Animal.new({
   'image_url' => '../public/images/animals/dogs/arf_vader.jpeg',
   'adopted' => 'false'
   })
+
+binding.binding.pry
+nil
