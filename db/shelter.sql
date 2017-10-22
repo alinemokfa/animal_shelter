@@ -6,7 +6,7 @@ CREATE TABLE animals (
   type VARCHAR(255),
   breed VARCHAR(255),
   admission_date DATE DEFAULT CURRENT_DATE,
-  adoption_status BOOLEAN NOT NULL
+  adoption_status BOOLEAN NOT NULL,
   image_url VARCHAR(1024),
   adopted BOOLEAN NOT NULL
 );
