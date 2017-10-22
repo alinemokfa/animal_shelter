@@ -15,4 +15,24 @@ class Animal
     @adopted = options['adopted']
   end
 
+  def save()
+    sql = "INSERT INTO animals
+    (
+      name,
+      type,
+      breed,
+      adoption_status,
+      image_url,
+      adopted
+    )
+    VALUES
+    (
+      $1, $2, $3, $4, $5, $6
+    )
+    RETURNING id"
+    values = [@name, @type, @breed, @adoption_status, @image_url, @adopted]
+    results = SqlRunner.run( sql, values )
+    @id = results.first()['id'].to_i
+  end
+  
 end
