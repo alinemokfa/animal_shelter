@@ -9,6 +9,8 @@ animal_1 = Animal.new({
   'image_url' => '../public/images/animals/dogs/arf_vader.jpeg',
   'adopted' => 'false'
   })
+  
+animal_1.save()
 
 binding.pry
 nil
