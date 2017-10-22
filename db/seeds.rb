@@ -1,6 +1,8 @@
 require( 'pry' )
 require_relative( '../models/animal.rb' )
 
+Animal.delete_all()
+
 animal_1 = Animal.new({
   'name' => 'Arf Vader',
   'type' => 'dog',
