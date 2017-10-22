@@ -34,5 +34,12 @@ class Animal
     results = SqlRunner.run( sql, values )
     @id = results.first()['id'].to_i
   end
-  
+
+  def self.all()
+    sql = "SELECT * FROM animals"
+    values = []
+    results = SqlRunner.run( sql, values )
+    return results.map { |animal| Animal.new( animal ) }
+  end
+
 end
