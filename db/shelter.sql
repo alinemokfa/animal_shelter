@@ -1,3 +1,4 @@
+DROP TABLE IF EXISTS adoptions;
 DROP TABLE IF EXISTS animals;
 DROP TABLE IF EXISTS owners;
 
@@ -6,7 +7,7 @@ CREATE TABLE owners(
   name VARCHAR(255) not null,
   address VARCHAR(255) not null,
   email_address VARCHAR(255),
-  phone_number INT2
+  phone_number INT8
 );
 
 CREATE TABLE animals(
@@ -18,4 +19,10 @@ CREATE TABLE animals(
   adoption_status BOOLEAN NOT NULL,
   image_url VARCHAR(1024),
   adopted BOOLEAN NOT NULL
+);
+
+CREATE TABLE adoptions(
+  id SERIAL8 primary key,
+  animal_id INT8 references owner(id),
+  owner_id INT8 references owners(id)
 );
