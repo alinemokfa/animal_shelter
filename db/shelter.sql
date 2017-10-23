@@ -1,6 +1,15 @@
 DROP TABLE IF EXISTS animals;
+DROP TABLE IF EXISTS owners;
 
-CREATE TABLE animals (
+CREATE TABLE owners(
+  id SERIAL8 primary key,
+  name VARCHAR(255) not null,
+  address VARCHAR(255) not null,
+  email_address VARCHAR(255),
+  phone_number INT2
+);
+
+CREATE TABLE animals(
   id SERIAL8 primary key,
   name VARCHAR(255) not null,
   type VARCHAR(255),
