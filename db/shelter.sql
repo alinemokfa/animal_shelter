@@ -1,4 +1,3 @@
-DROP TABLE IF EXISTS adoptions;
 DROP TABLE IF EXISTS animals;
 DROP TABLE IF EXISTS owners;
 
@@ -18,11 +17,5 @@ CREATE TABLE animals(
   admission_date DATE DEFAULT CURRENT_DATE,
   adoption_status BOOLEAN NOT NULL,
   image_url VARCHAR(1024),
-  adopted BOOLEAN NOT NULL
-);
-
-CREATE TABLE adoptions(
-  id SERIAL8 primary key,
-  animal_id INT8 references owner(id),
-  owner_id INT8 references owners(id)
+  owner_id INT8 REFERENCES owners(id)
 );

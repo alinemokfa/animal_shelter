@@ -1,8 +1,9 @@
 require_relative('../db/sql_runner.rb')
+require_relative('owner.rb')
 
 class Animal
-  attr_reader(:id)
-  attr_accessor(:name, :type, :breed, :admission_date, :adoption_status, :image_url, :adopted)
+  attr_reader(:id, :owner_id)
+  attr_accessor(:name, :type, :breed, :admission_date, :adoption_status, :image_url)
 
   def initialize (options)
     @id = options['id'].to_i if options['id']
@@ -12,7 +13,7 @@ class Animal
     @admission_date = options['admission_date']
     @adoption_status = options['adoption_status']
     @image_url = options['image_url']
-    @adopted = options['adopted']
+    @owner_id = options['owner_id'].to_i()
   end
 
   def save()
@@ -23,14 +24,14 @@ class Animal
       breed,
       adoption_status,
       image_url,
-      adopted
+      owner_id
     )
     VALUES
     (
       $1, $2, $3, $4, $5, $6
     )
     RETURNING id"
-    values = [@name, @type, @breed, @adoption_status, @image_url, @adopted]
+    values = [@name, @type, @breed, @adoption_status, @image_url, @owner_id]
     results = SqlRunner.run( sql, values )
     @id = results.first()['id'].to_i
   end
@@ -62,12 +63,12 @@ class Animal
             breed,
             adoption_status,
             image_url,
-            adopted
+            owner_id
           ) =
           (
             $1, $2, $3, $4, $5, $6
           ) WHERE id = $7"
-    values = [@name, @type, @breed, @adoption_status, @image_url, @adopted, @id]
+    values = [@name, @type, @breed, @adoption_status, @image_url, @owner_id, @id]
     SqlRunner.run(sql, values)
   end
 
@@ -77,6 +78,15 @@ class Animal
     values = [id]
     results = SqlRunner.run( sql, values )
     return Animal.new( results.first )
+  end
+
+  def owner()
+    sql = "SELECT * FROM owners WHERE id = $1"
+    values = [@owner_id]
+    results = SqlRunner.run(sql, values)
+    owner_data = results[0]
+    owner = Owner.new(owner_data)
+    return owner
   end
 
 end

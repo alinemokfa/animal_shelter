@@ -1,4 +1,5 @@
 require_relative('../db/sql_runner.rb')
+require_relative('animal.rb')
 
 class Owner
   attr_reader(:id)
@@ -71,6 +72,14 @@ class Owner
     values = [id]
     results = SqlRunner.run( sql, values )
     return Owner.new( results.first )
+  end
+
+  def animals()
+    sql = "SELECT * FROM animals WHERE owner_id = $1"
+    values = [@id]
+    results = SqlRunner.run(sql, values)
+    orders = results.map{ |animal| Animal.new(animal) }
+    return orders
   end
 
 end

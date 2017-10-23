@@ -1,31 +1,10 @@
 require( 'pry' )
-require_relative( '../models/animal.rb' )
 require_relative( '../models/owner.rb' )
+require_relative( '../models/animal.rb' )
 
 Animal.delete_all()
 Owner.delete_all()
 
-animal_1 = Animal.new({
-  'name' => 'Arf Vader',
-  'type' => 'dog',
-  'breed' => 'French Bulldog',
-  'adoption_status' => 'false',
-  'image_url' => '../public/images/animals/dogs/arf_vader.jpeg',
-  'adopted' => 'false'
-  })
-
-animal_1.save()
-
-animal_2 = Animal.new({
-  'name' => 'Chew Barka',
-  'type' => 'dog',
-  'breed' => 'Lhasa Apso',
-  'adoption_status' => 'true',
-  'image_url' => '../public/images/animals/dogs/chew_barka.jpeg',
-  'adopted' => 'false'
-  })
-
-animal_2.save()
 
 owner_1 = Owner.new({
   'name' => 'Aline',
@@ -44,6 +23,28 @@ owner_2 = Owner.new({
   })
 
 owner_2.save
+
+animal_1 = Animal.new({
+  'name' => 'Arf Vader',
+  'type' => 'dog',
+  'breed' => 'French Bulldog',
+  'adoption_status' => 'false',
+  'image_url' => '/images/animals/dogs/arf_vader.jpeg',
+  'owner_id' => owner_1.id
+  })
+
+animal_1.save()
+
+animal_2 = Animal.new({
+  'name' => 'Chew Barka',
+  'type' => 'dog',
+  'breed' => 'Lhasa Apso',
+  'adoption_status' => 'true',
+  'image_url' => '/images/animals/dogs/chew_barka.jpeg',
+  'owner_id' => owner_2.id
+  })
+
+animal_2.save()
 
 
 
