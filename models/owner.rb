@@ -18,7 +18,7 @@ class Owner
     (
       name,
       address,
-      email_address
+      email_address,
       phone_number
     )
     VALUES
