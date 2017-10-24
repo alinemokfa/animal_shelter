@@ -1,0 +1,53 @@
+<form method="post" action="/animals">
+
+  <label for="name-field">Name:</label>
+  <input
+  type="text"
+  name="name"
+  id="first-name-field"
+  />
+
+  <br>
+
+  <label for="animal-selection">Type:</label>
+  <select name="type" id="animal-selection">
+    <option value="dog">Dog</option>
+    <option value="cat">Cat</option>
+    <option value="exotic_pet">Exotic Pet</option>
+    <option value="rabbit">Rabbit</option>
+  </select>
+
+  <br>
+
+  <label for="breed-field">Breed:</label>
+  <input
+  type="text"
+  name="breed"
+  id="breed-field"
+  />
+
+  <br>
+
+  <label for="date-field">Date of admission:</label>
+  <input
+  type="date"
+  name="date"
+  id="date-field"
+  />
+
+  <br>
+
+  <label for="adoption-status">Adoption Status:</label>
+  <select name="adoption_status" id="adoption-status-selection">
+    <option value="f">Not Ready for Adoption</option>
+  </select>
+
+  <br>
+
+  <label for="image-field">Photo URL:</label>
+  <input type="text" name="image_url" id="image-field"/>
+
+  <br>
+
+  <input type="submit" value="Add New Animal">
+</form>

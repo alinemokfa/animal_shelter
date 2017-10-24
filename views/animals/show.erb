@@ -1,0 +1,21 @@
+<p>Name: <%= @animal.name %></p>
+<p>Breed: <%= @animal.breed %></p>
+<p>Admission Date: <%= @animal.admission_date %></p>
+<p>Adoption Status:
+  <% if @animal.adoption_status == "f" %>
+  <%= "Not Ready for Adoption" %>
+  <% else %>
+  <%= "Adopt Me!" %>
+  <% end %>
+</p>
+ <img src = "<%= @animal.image_url %>"/>
+
+<form method="get" action="/animals/<%= @animal.id %>/edit">
+  <input id ="edit-button" type="submit" value="Edit"/>
+</form>
+
+<br>
+
+<form method="post" action="/animals/<%= @animal.id %>/delete">
+  <input id ="delete-button" type="submit" value="Delete"/>
+</form>

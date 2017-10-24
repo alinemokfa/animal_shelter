@@ -13,7 +13,7 @@ class Animal
     @admission_date = options['admission_date']
     @adoption_status = options['adoption_status']
     @image_url = options['image_url']
-    @owner_id = options['owner_id'].to_i()
+    @owner_id = options['owner_id'].to_i() if options["owner_id"] != nil
   end
 
   def save()
