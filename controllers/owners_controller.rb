@@ -17,7 +17,7 @@ post '/owners' do
   redirect to '/owners'
 end
 
-get '/owners/:id' do # show
+get '/owners/:id' do
   @owner = Owner.find( params[:id] )
   erb( :"owners/show" )
 end
