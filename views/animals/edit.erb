@@ -59,8 +59,9 @@
 
   <label for="owner-field">Owner:</label>
   <select name="owner_id" id="owner-field">
+    <option value="" <%= "selected" if @animal.owner_id == nil  %> >None</option>
     <% @owners.each do |owner| %>
-      <option value="<%= owner.id %>"><%= owner.name %></option>
+      <option <%= "selected" if @animal.owner_id == owner.id  %> value="<%= owner.id %>"><%= owner.name %></option>
     <% end %>
   </select>
 
