@@ -1,0 +1,21 @@
+<p>Name: <%= @owner.name %></p>
+<p>Address: <%= @owner.address %></p>
+<p>Email address: <%= @owner.email_address %></p>
+<p>Phone number: <%= @owner.phone_number %></p>
+<p>Adopted animals:
+  <% if @owner.animals() == "" %>
+  <%= "None" %>
+  <% else %>
+  <%= @owner.animals.count() %>
+  <% end %>
+</p>
+
+<form method="get" action="/owners/<%= @owner.id %>/edit">
+  <input id ="edit-button" type="submit" value="Edit"/>
+</form>
+
+<br>
+
+<form method="post" action="/owners/<%= @owner.id %>/delete">
+  <input id ="delete-button" type="submit" value="Delete"/>
+</form>
