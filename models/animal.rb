@@ -13,7 +13,7 @@ class Animal
     @admission_date = options['admission_date']
     @adoption_status = options['adoption_status']
     @image_url = options['image_url']
-    @owner_id = options['owner_id'].to_i() if options["owner_id"] != nil
+    @owner_id = options['owner_id'].to_i() if options["owner_id"] != nil && options["owner_id"] != ""
   end
 
   def save()
@@ -68,6 +68,12 @@ class Animal
           (
             $1, $2, $3, $4, $5, $6
           ) WHERE id = $7"
+
+    #   data validation
+    if(@owner_id != nil)
+        @adoption_status = 'f'
+    end
+
     values = [@name, @type, @breed, @adoption_status, @image_url, @owner_id, @id]
     SqlRunner.run(sql, values)
   end
