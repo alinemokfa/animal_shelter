@@ -8,6 +8,8 @@
   value="<%= @animal.name %>"
   />
 
+  <br>
+
   <label for="animal-selection">Type:</label>
   <select name="type" id="animal-selection">
     <option value="dog" <%= "selected" if @animal.type == "dog" %>>Dog</option>
@@ -16,12 +18,16 @@
     <option value="rabbit" <%= "selected" if @animal.type == "rabbit" %>>Rabbit</option>
   </select>
 
+  <br>
+
   <label for="breed-field">Breed:</label>
   <input type="text"
   name="breed"
   id="breed-field"
   value="<%= @animal.breed %>"
   />
+
+  <br>
 
   <label for="date-field">Date of admission:</label>
   <input
@@ -31,12 +37,33 @@
   value="<%= @animal.admission_date %>"
   />
 
+  <br>
+
   <label for="adoption-status">Adoption Status:</label>
   <select name="adoption_status" id="adoption-status-selection">
     <option value="t" <%= "selected" if @animal.adoption_status == "t" %>>Ready For Adoption</option>
     <option value="f" <%= "selected" if @animal.adoption_status == "f" %>>Not Ready for Adoption</option>
   </select>
 
+  <br>
 
-  <input type='submit' value="Edit">
+  <label for="image-field">Photo URL:</label>
+  <input
+  type="text"
+  name="image_url"
+  id="image-field"
+  value="<%= @animal.image_url %>"
+  />
+
+  <br>
+
+  <label for="owner-field">Owner:</label>
+  <select name="owner_id" id="owner-field">
+    <% @owners.each do |owner| %>
+      <option value="<%= owner.id %>"><%= owner.name %></option>
+    <% end %>
+  </select>
+
+
+  <input type='submit' value="Save new details">
 </form>
