@@ -2,6 +2,9 @@
 <p>Breed: <%= @animal.breed %></p>
 <p>Admission Date: <%= @animal.admission_date %></p>
 <p>Adoption Status:
+
+  <!-- <% if @animal.owner.name == "" %> -->
+
   <% if @animal.adoption_status == "f" %>
   <%= "Not Ready for Adoption" %>
   <% else %>
