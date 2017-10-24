@@ -3,14 +3,13 @@
 <p>Admission Date: <%= @animal.admission_date %></p>
 <p>Adoption Status:
 
-  <!-- <% if @animal.owner.name == "" %> -->
-
   <% if @animal.adoption_status == "f" %>
   <%= "Not Ready for Adoption" %>
   <% else %>
   <%= "Adopt Me!" %>
   <% end %>
 </p>
+
  <img src = "<%= @animal.image_url %>"/>
 
 <form method="get" action="/animals/<%= @animal.id %>/edit">
