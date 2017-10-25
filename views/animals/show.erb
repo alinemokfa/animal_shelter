@@ -1,14 +1,10 @@
 <p>Name: <%= @animal.name %></p>
 <p>Breed: <%= @animal.breed %></p>
 <p>Admission Date: <%= @animal.admission_date %></p>
-<p>Adoption Status:
+<p>Adopted by: <% @animal.owner.first_name %>
 
-  <% if @animal.adoption_status == "f" %>
-  <%= "Not Ready for Adoption" %>
-  <% else %>
-  <%= "Adopt Me!" %>
-  <% end %>
-</p>
+<br>
+<br>
 
  <img src = "<%= @animal.image_url %>"/>
 

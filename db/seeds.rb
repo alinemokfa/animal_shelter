@@ -7,7 +7,8 @@ Owner.delete_all()
 
 
 owner_1 = Owner.new({
-  'name' => 'Aline',
+  'first_name' => 'Aline',
+  'last_name' => 'Sei La',
   'address' => '14/8 Dream Road',
   'email_address' => 'aline_dream@coldmail.com',
   'phone_number' => '07566728009'
@@ -16,7 +17,8 @@ owner_1 = Owner.new({
 owner_1.save
 
 owner_2 = Owner.new({
-  'name' => 'Patrick',
+  'first_name' => 'Pat',
+  'last_name' => 'Doo Dis',
   'address' => '14/8 Dream Road',
   'email_address' => 'patrick_dream@coldmail.com',
   'phone_number' => '07566728008'
@@ -28,7 +30,7 @@ animal_1 = Animal.new({
   'name' => 'Arf Vader',
   'type' => 'dog',
   'breed' => 'French Bulldog',
-  'adoption_status' => 'false',
+  'adoption_status' => 'true',
   'image_url' => '/images/animals/dogs/arf_vader.jpeg',
   'owner_id' => owner_1.id
   })
