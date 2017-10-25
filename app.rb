@@ -4,5 +4,5 @@ require_relative('controllers/animals_controller.rb')
 require_relative('controllers/owners_controller')
 
 get '/' do
-  erb( :index )
+  erb( :home )
 end

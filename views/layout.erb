@@ -1,27 +1,29 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Animal Shelter</title>
-  <link rel="stylesheet" href="/style.css">
+  <link rel="stylesheet" href="styles/style.css">
   <link rel="icon" href="http://4vector.com/i/free-vector-dog-silhouette_102697_Dog_silhouette.png" />
 </head>
+
 <body>
-<nav>
-  <ul>
-    <li>
-      <a href="/animals">All Animals</a>
-    </li>
-    <li>
-      <a href="/owners">All Owners</a>
-    </li>
-    <li>
-      <a href="/animals/new">Add New Animal</a>
-    </li>
-    <li>
-      <a href="/owners/new">Add New Owner</a>
-    </li>
-  </ul>
-</nav>
+
+  <header class="menu">
+        <nav>
+          <ul>
+            <a href="/animals">All Animals</a></li>
+            <a href="/owners">All Owners</a></li>
+            <a href="/animals/new">Add New Animal</a></li>
+            <a href="/owners/new">Add New Owner</a></li>
+          </ul>
+        </nav>
+      </div>
+  </header>
+
+
   <%= yield %>
 </body>
 </html>
