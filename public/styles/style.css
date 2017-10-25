@@ -8,17 +8,30 @@ body, html{
   color:#666;
 }
 
-
-.menu a{
-  display: inline;
-  top:50%;
-  width:100%;
-  color:#000;
-  font-size:27px;
+a{
   text-transform:uppercase;
+  text-decoration: none;
+  font-size:12px;
+  color:#666;
+}
+
+header.menu {
+  background-color: #666;
+  overflow: auto;
+  white-space: nowrap;
+}
+
+header.menu a {
+  display: inline-block;
+  color: white;
+  text-align: center;
+  padding: 14px;
   text-decoration: none;
 }
 
+header.menu a:hover {
+  background-color: #000;;
+}
 
 
 .asimg1, .asimg2, .asimg3, .asimg4{
@@ -57,12 +70,24 @@ body, html{
 
 .section{
   text-align:center;
-  padding:50px 80px;
+  padding:20px 40px;
 }
 
 .section-light a{
-  background-color:#f4f4f4;
   color:#666;
+  text-transform:uppercase;
+  text-decoration: none;
+}
+
+.section-light a:hover{
+  background-color: #666;
+  color: white;
+}
+
+.section-light a{
+  color:#666;
+  text-transform:uppercase;
+  text-decoration: none;
 }
 
 .section-dark a{
