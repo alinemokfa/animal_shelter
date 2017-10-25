@@ -3,11 +3,12 @@ require_relative('animal.rb')
 
 class Owner
   attr_reader(:id)
-  attr_accessor(:name, :address, :email_address, :phone_number)
+  attr_accessor(:first_name, :last_name, :address, :email_address, :phone_number)
 
   def initialize (options)
     @id = options['id'].to_i if options['id']
-    @name = options['name']
+    @first_name = options['first_name']
+    @last_name = options['last_name']
     @address = options['address']
     @email_address = options ['email_address']
     @phone_number = options ['phone_number']
@@ -17,17 +18,18 @@ class Owner
   def save()
     sql = "INSERT INTO owners
     (
-      name,
+      first_name,
+      last_name,
       address,
       email_address,
       phone_number
     )
     VALUES
     (
-      $1, $2, $3, $4
+      $1, $2, $3, $4, $5
     )
     RETURNING id"
-    values = [@name, @address, @email_address, @phone_number]
+    values = [@first_name, @last_name, @address, @email_address, @phone_number]
     results = SqlRunner.run( sql, values )
     @id = results.first()['id'].to_i
   end
@@ -54,15 +56,16 @@ class Owner
   def update()
     sql = "UPDATE owners
       SET (
-            name,
+            first_name,
+            last_name,
             address,
             email_address,
             phone_number
           ) =
           (
-            $1, $2, $3, $4
-          ) WHERE id = $5"
-    values = [@name, @address, @email_address, @phone_number, @id]
+            $1, $2, $3, $4, $5
+          ) WHERE id = $6"
+    values = [@first_name, @last_name, @address, @email_address, @phone_number, @id]
     SqlRunner.run(sql, values)
   end
 
