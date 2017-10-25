@@ -12,9 +12,10 @@
 
   <label for="animal-selection">Type:</label>
   <select name="type" id="animal-selection">
-    <option value="dog" <%= "selected" if @animal.type == "dog" %>>Dog</option>
     <option value="cat" <%= "selected" if @animal.type == "cat" %>>Cat</option>
+    <option value="dog" <%= "selected" if @animal.type == "dog" %>>Dog</option>
     <option value="exotic_pet" <%= "selected" if @animal.type == "exotic_pet" %>>Exotic Pet</option>
+    <option value="horse" <%= "selected" if @animal.type == "horse" %>>Horse</option>
     <option value="rabbit" <%= "selected" if @animal.type == "rabbit" %>>Rabbit</option>
   </select>
 
@@ -61,7 +62,7 @@
   <select name="owner_id" id="owner-field">
     <option value="" <%= "selected" if @animal.owner_id == nil  %> >None</option>
     <% @owners.each do |owner| %>
-      <option <%= "selected" if @animal.owner_id == owner.id  %> value="<%= owner.id %>"><%= owner.name %></option>
+      <option <%= "selected" if @animal.owner_id == owner.id  %> value="<%= owner.id %>"><%= owner.first_name %> <%= owner.last_name %></option>
     <% end %>
   </select>
 
