@@ -4,7 +4,8 @@ DROP TABLE IF EXISTS owners;
 CREATE TABLE owners
 (
   id SERIAL8 primary key,
-  name VARCHAR(255) not null,
+  first_name VARCHAR(255) not null,
+  last_name VARCHAR(255) not null,
   address VARCHAR(255) not null,
   email_address VARCHAR(255),
   phone_number INT8
