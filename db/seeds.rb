@@ -31,7 +31,7 @@ animal_1 = Animal.new({
   'type' => 'dog',
   'breed' => 'French Bulldog',
   'adoption_status' => 'true',
-  'image_url' => '/images/animals/dogs/arf_vader.jpeg',
+  'image_url' => 'https://i.imgur.com/nJUwp15.jpg',
   'owner_id' => owner_1.id
   })
 
@@ -42,7 +42,7 @@ animal_2 = Animal.new({
   'type' => 'dog',
   'breed' => 'Lhasa Apso',
   'adoption_status' => 'true',
-  'image_url' => '/images/animals/dogs/chew_barka.jpeg',
+  'image_url' => 'http://megomuseum.com/mmgallery/files/4/9/Chewbarka.jpg',
   'owner_id' => owner_2.id
   })
 
