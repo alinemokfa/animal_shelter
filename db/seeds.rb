@@ -30,7 +30,7 @@ animal_1 = Animal.new({
   'name' => 'Arf Vader',
   'type' => 'dog',
   'breed' => 'French Bulldog',
-  'adoption_status' => 'true',
+  'adoption_status' => 'false',
   'image_url' => 'https://i.imgur.com/nJUwp15.jpg',
   'owner_id' => owner_1.id
   })
@@ -41,13 +41,23 @@ animal_2 = Animal.new({
   'name' => 'Chew Barka',
   'type' => 'dog',
   'breed' => 'Lhasa Apso',
-  'adoption_status' => 'true',
+  'adoption_status' => 'false',
   'image_url' => 'http://megomuseum.com/mmgallery/files/4/9/Chewbarka.jpg',
   'owner_id' => owner_2.id
   })
 
 animal_2.save()
 
+animal_2 = Animal.new({
+  'name' => 'Neigh Bother',
+  'type' => 'horse',
+  'breed' => 'Camargue',
+  'adoption_status' => 'false',
+  'image_url' => 'https://scontent.flhr4-2.fna.fbcdn.net/v/t1.0-9/525837_10151253622428162_842597123_n.jpg?oh=20c1fd5ad46c14de84dca81abf2bf96e&oe=5A7D0DC9',
+  'owner_id' => owner_2.id
+  })
+
+animal_2.save()
 
 
 binding.pry
