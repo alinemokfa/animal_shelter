@@ -1,0 +1,41 @@
+<% if @animals.count == 0 && @owners.count == 0 %>
+  <p>No results found</p>
+<% else %>
+  <ul>
+    <li>
+      <% if @animals.count > 0 %>
+        <h1>Animals</h1>
+      <% end %>
+      <% @animals.each do |animal| %>
+
+        <p>Name: <%= animal.name %></p>
+        <p>Type: <%= animal.type %></p>
+        <p>Adoption Status:
+          <% if animal.adoption_status == "t" %>
+            <%= "Ready for Adoption" %>
+          <% else %>
+            <%= "Not Ready for Adoption" %>
+          <% end %>
+        </p>
+        <p>Admission date: <%= animal.admission_date %></p>
+        <p><a href="/animals/<%= animal.id %>"><img src = "<%= animal.image_url %>"/></a></p>
+
+      <% end %>
+    </li>
+
+    <li>
+      <% if @owners.count > 0 %>
+        <h1>Owners</h1>
+      <% end %>
+      <% @owners.each do |owner| %>
+
+          <p>First name: <%= owner.first_name %></p>
+          <p>Last name: <%= owner.last_name %></p>
+          <p>Address: <%= owner.address %></p>
+          <p>Email Address: <%= owner.email_address %></p>
+          <p><a href="/owners/<%= owner.id %>"><img src = "<%= owner.image_url %>"/></a></p>
+        </div>
+      <% end %>
+    </li>
+  </ul>
+<% end %>

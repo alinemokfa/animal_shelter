@@ -24,8 +24,8 @@ get '/animals/:id' do # show
 end
 
 get '/animals/:id/edit' do
-    @animal = Animal.find(params[:id].to_i())
-    @owners = Owner.all()
+  @animal = Animal.find(params[:id].to_i())
+  @owners = Owner.all()
   erb(:"animals/edit")
 end
 
