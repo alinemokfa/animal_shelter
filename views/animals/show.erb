@@ -1,18 +1,14 @@
 <p>Name: <%= @animal.name %></p>
 <p>Breed: <%= @animal.breed %></p>
 <p>Admission Date: <%= @animal.admission_date %></p>
-<p>Adopted by: <% @animal.owner.first_name %>
 
-<br>
-<br>
+ <img src="<%= @animal.image_url %>" height="300px" width="300px"/>
 
- <img src = "<%= @animal.image_url %>"/>
+ <br>
 
 <form method="get" action="/animals/<%= @animal.id %>/edit">
   <input id ="edit-button" type="submit" value="Edit"/>
 </form>
-
-<br>
 
 <form method="post" action="/animals/<%= @animal.id %>/delete">
   <input id ="delete-button" type="submit" value="Delete"/>
