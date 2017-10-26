@@ -1,7 +1,19 @@
-<p>
+<div class="adoptions-container">
+  <h1> SUCCESS STORIES</h1>
+  <div class="row">
+
   <% @animals.each do |animal| %>
-  <p> <img src="<%= animal.image_url %>" height="300px" width="300px"/>
-  <p>Name: <%= animal.name %></p>
-  <p>Adopted by: <%= animal.owner().pretty_name%> </p>
+
+  <div class="col-4">
+
+    <div class="adoptions">
+      <p> <img src="<%= animal.image_url %>" height="300px" width="300px"/>
+      <p>Animal Name: <%= animal.name %></p>
+      <p>Adopted by: <%= animal.owner().pretty_name%> </p>
+    </div>
+
+  </div>
 <% end %>
-</p>
+  </div>
+
+</div>
