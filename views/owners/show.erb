@@ -4,7 +4,6 @@
     <div class="col-3">
       <div class="owner">
         <ul>
-          <li>Name: <%= @owner.first_name %> <%= @owner.last_name %></li>
           <li>Address: <%= @owner.address %></li>
           <li>Email address: <%= @owner.email_address %></li>
           <li>Phone number: <%= @owner.phone_number %></li>
@@ -17,6 +16,12 @@
             <% end %>
           </li>
         </ul>
+
+        <br>
+
+        <img src="<%= @owner.image_url %>" height="300px" width="250px"/>
+
+        <br>
 
         <form method="get" action="/owners/<%= @owner.id %>/edit">
           <input id ="edit-button" type="submit" value="Edit"/>

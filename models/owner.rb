@@ -3,12 +3,13 @@ require_relative('animal.rb')
 
 class Owner
   attr_reader(:id)
-  attr_accessor(:first_name, :last_name, :address, :email_address, :phone_number)
+  attr_accessor(:first_name, :last_name, :image_url, :address, :email_address, :phone_number)
 
   def initialize (options)
     @id = options['id'].to_i if options['id']
     @first_name = options['first_name']
     @last_name = options['last_name']
+    @image_url = options['image_url']
     @address = options['address']
     @email_address = options ['email_address']
     @phone_number = options ['phone_number']
@@ -20,16 +21,17 @@ class Owner
     (
       first_name,
       last_name,
+      image_url,
       address,
       email_address,
       phone_number
     )
     VALUES
     (
-      $1, $2, $3, $4, $5
+      $1, $2, $3, $4, $5, $6
     )
     RETURNING id"
-    values = [@first_name, @last_name, @address, @email_address, @phone_number]
+    values = [@first_name, @last_name, @image_url, @address, @email_address, @phone_number]
     results = SqlRunner.run( sql, values )
     @id = results.first()['id'].to_i
   end
@@ -58,14 +60,15 @@ class Owner
       SET (
             first_name,
             last_name,
+            image_url,
             address,
             email_address,
             phone_number
           ) =
           (
-            $1, $2, $3, $4, $5
-          ) WHERE id = $6"
-    values = [@first_name, @last_name, @address, @email_address, @phone_number, @id]
+            $1, $2, $3, $4, $5, $6
+          ) WHERE id = $7"
+    values = [@first_name, @last_name, @image_url, @address, @email_address, @phone_number, @id]
     SqlRunner.run(sql, values)
   end
 

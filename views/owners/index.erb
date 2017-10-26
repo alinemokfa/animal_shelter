@@ -7,6 +7,7 @@
     <div class="col-4">
 
       <div class="owner">
+        <p><img src="<%= owner.image_url %>" height="300px" width="250px"/></p>
         <p>Name: <%= owner.first_name() %> <%= owner.last_name() %></p>
         <p><a href="/owners/<%= owner.id %>">Show Owner</a></p>
       </div>

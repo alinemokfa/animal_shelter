@@ -1,7 +1,9 @@
 <div class="adoptions-container">
   <h1> SUCCESS STORIES</h1>
   <div class="row">
-
+    <% if @animals.count == 0 %>
+    No adoptions.
+    <% end %>
   <% @animals.each do |animal| %>
 
   <div class="col-4">
