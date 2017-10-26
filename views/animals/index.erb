@@ -1,9 +1,24 @@
-<div class="row">
-<!-- use flexbox -->
-<% @animals.each do |animal| %>
-  <p>Name: <%= animal.name() %></p>
-  <p>Admission Date: <%= animal.admission_date %></p>
-  <p><a href="/animals/<%= animal.id %>">Show Animal</a></p>
-<% end %>
+<div class="animal-container">
+  <h1>ALL ANIMALS</h1>
+  <div class="row">
+
+  <% @animals.each do |animal| %>
+
+    <div class="col-4">
+
+      <div class="animal">
+        <p>Name: <%= animal.name() %></p>
+        <p>Type: <%= animal.type() %></p>
+        <p>Admission Date: <%= animal.admission_date %></p>
+        <p><a href="/animals/<%= animal.id %>">Show Animal</a></p>
+      </div>
+
+    </div>
+
+    <% end %>
+
+  </div>
+
+
 
 </div>
