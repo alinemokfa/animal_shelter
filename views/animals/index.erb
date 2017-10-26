@@ -7,10 +7,11 @@
     <div class="col-4">
 
       <div class="animal">
+        <p> <img src="<%= animal.image_url %>" height="300px" width="250px"/>
         <p>Name: <%= animal.name() %></p>
         <p>Type: <%= animal.type() %></p>
         <p>Admission Date: <%= animal.admission_date %></p>
-        <p><a href="/animals/<%= animal.id %>">Show Animal</a></p>
+        <a href="/animals/<%= animal.id %>">Show Animal</a>
       </div>
 
     </div>

@@ -1,3 +1,7 @@
+<div class="animal-container">
+  <h1>EDIT ANIMAL'S DETAILS: </h1>
+  <div class="row">
+
 <form method="post" action="/animals/<%= @animal.id %>">
 
   <label for="name-field">Name:</label>
@@ -62,7 +66,7 @@
   <select name="owner_id" id="owner-field">
     <option value="" <%= "selected" if @animal.owner_id == nil  %> >None</option>
     <% @owners.each do |owner| %>
-      <option <%= "selected" if @animal.owner_id == owner.id  %> value="<%= owner.id %>"><%= owner.first_name %> <%= owner.last_name %></option>
+      <option <%= "selected" if @animal.owner_id == owner.id  %> value="<%= owner.id %>"><%= owner.pretty_name %></option>
     <% end %>
   </select>
 

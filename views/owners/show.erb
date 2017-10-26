@@ -1,22 +1,31 @@
-<p>Name: <%= @owner.first_name %> <%= @owner.last_name %></p>
-<p>Address: <%= @owner.address %></p>
-<p>Email address: <%= @owner.email_address %></p>
-<p>Phone number: <%= @owner.phone_number %></p>
-<p>Adopted animals:
-  <% if @animals.count == 0 %>
-    No animals.
-  <% end %>
-  <% for animal in @animals %>
-    <p>Name: <%= animal.name %></p>
-  <% end %>
-</p>
+<div class="owner-container">
+  <h1> <%= @owner.pretty_name %> </h1>
+  <div class="row">
+    <div class="col-3">
+      <div class="owner">
+        <ul>
+          <li>Name: <%= @owner.first_name %> <%= @owner.last_name %></li>
+          <li>Address: <%= @owner.address %></li>
+          <li>Email address: <%= @owner.email_address %></li>
+          <li>Phone number: <%= @owner.phone_number %></li>
+          <li>Adopted animals:
+            <% if @animals.count == 0 %>
+            No animals.
+            <% end %>
+            <% for animal in @animals %>
+            <%= animal.name %>
+            <% end %>
+          </li>
+        </ul>
 
-<form method="get" action="/owners/<%= @owner.id %>/edit">
-  <input id ="edit-button" type="submit" value="Edit"/>
-</form>
+        <form method="get" action="/owners/<%= @owner.id %>/edit">
+          <input id ="edit-button" type="submit" value="Edit"/>
+        </form>
 
-<br>
-
-<form method="post" action="/owners/<%= @owner.id %>/delete">
-  <input id ="delete-button" type="submit" value="Delete"/>
-</form>
+        <form method="post" action="/owners/<%= @owner.id %>/delete">
+          <input id ="delete-button" type="submit" value="Delete"/>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

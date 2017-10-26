@@ -24,6 +24,16 @@ body, html{
     padding:20px;
 }
 
+.animal ul {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+.owner ul {
+  list-style-type: none;
+  padding-left: 0;
+}
+
 .row {
   display: flex;
   flex-wrap: wrap;
@@ -35,16 +45,27 @@ body, html{
   padding: 10px;
 }
 
-.animal, .owner {
-  border: 1px solid grey;
+.col-3{
+  flex: 0 0 50%;
   padding: 10px;
+}
+.animal, .owner {
+  padding: 10px;
+  color: #2E2E2E;
+}
+
+.animal a, .owner a{
+  text-transform:uppercase;
+  text-decoration: none;
+  font-size:12px;
+  color: black;
 }
 
 a{
   text-transform:uppercase;
   text-decoration: none;
   font-size:12px;
-  color:#666;
+  color: white;
 }
 
 
@@ -176,6 +197,11 @@ footer.menu a:hover {
 
 .astext .border.trans{
   background-color:transparent;
+}
+
+label {
+  width: 150px;
+  display: inline-block;
 }
 
 @media(max-width:568px){

@@ -1,10 +1,21 @@
-<p>Name: <%= @animal.name %></p>
-<p>Breed: <%= @animal.breed %></p>
-<p>Admission Date: <%= @animal.admission_date %></p>
+<div class="animal-container">
+  <h1> <%= @animal.name %> </h1>
+  <div class="row">
+    <div class="col-3">
+      <div class="animal">
+        <ul>
+<li>Breed: <%= @animal.breed %></li>
+<li>Admission Date: <%= @animal.admission_date %></li>
+<li>Adoption status: <% if @animal.adoption_status == "t" %>>Ready For Adoption</li>
+                    <% else %>
+                    Not Ready For Adoption
+                    <% end %>
+                  </ul>
+<br>
 
- <img src="<%= @animal.image_url %>" height="300px" width="300px"/>
+<img src="<%= @animal.image_url %>" height="300px" width="250px"/>
 
- <br>
+<br>
 
 <form method="get" action="/animals/<%= @animal.id %>/edit">
   <input id ="edit-button" type="submit" value="Edit"/>
@@ -13,3 +24,8 @@
 <form method="post" action="/animals/<%= @animal.id %>/delete">
   <input id ="delete-button" type="submit" value="Delete"/>
 </form>
+
+      </div>
+    </div>
+  </div>
+</div>
