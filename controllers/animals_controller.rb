@@ -1,6 +1,7 @@
 require( 'sinatra' )
 require( 'sinatra/contrib/all' )
 require_relative( '../models/animal.rb' )
+require_relative( '../models/owner.rb' )
 
 get '/animals' do
   @animals = Animal.all()
@@ -23,8 +24,8 @@ get '/animals/:id' do # show
 end
 
 get '/animals/:id/edit' do
-  @animal = Animal.find(params[:id].to_i())
-  @owners = Owner.all()
+    @animal = Animal.find(params[:id].to_i())
+    @owners = Owner.all()
   erb(:"animals/edit")
 end
 
