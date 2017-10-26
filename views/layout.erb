@@ -25,13 +25,26 @@
             <a href="/adoptions">Adoptions</a>
           </ul>
         </nav>
-      </div>
   </header>
 <!-- yield -->
-  <%= yield %>
+
+    <%= yield %>
+
+  <% if request.path_info == '/' %>
+  <footer class="menu">
+    <a class="go-to-top-button" href="#top">Go to top</a>
+      <nav>
+        <ul>
+          <a href="/">Home</a>
+          <a href="/animals">All Animals</a>
+          <a href="/owners">All Owners</a>
+          <a href="/animals/new">Add New Animal</a>
+          <a href="/owners/new">Add New Owner</a>
+          <a href="/adoptions">Adoptions</a>
+        </ul>
+      </nav>
+   </footer>
+   <% end %>
 
 </body>
-<footer>
-  <a href="#top">Go to top</a> add footer
- </footer>
 </html>
