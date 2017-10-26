@@ -1,4 +1,19 @@
+<div class="owner-container">
+  <h1>ALL OWNERS</h1>
+  <div class="row">
+
 <% @owners.each do |owner| %>
-  <p>Name: <%= owner.first_name() %> <%= owner.last_name() %></p>
-  <p><a href="/owners/<%= owner.id %>">Show Owner</a></p>
+
+    <div class="col-4">
+
+      <div class="owner">
+        <p>Name: <%= owner.first_name() %> <%= owner.last_name() %></p>
+        <p><a href="/owners/<%= owner.id %>">Show Owner</a></p>
+      </div>
+
+    </div>
 <% end %>
+
+  </div>
+
+</div>
