@@ -40,7 +40,7 @@
 
   <br>
 
-  <label for="adoption-status">Adoption Status:</label>
+  <label for="adoption-status-selection">Adoption Status:</label>
   <select name="adoption_status" id="adoption-status-selection">
     <option value="t" <%= "selected" if @animal.adoption_status == "t" %>>Ready For Adoption</option>
     <option value="f" <%= "selected" if @animal.adoption_status == "f" %>>Not Ready for Adoption</option>
