@@ -3,10 +3,11 @@
 <p>Email address: <%= @owner.email_address %></p>
 <p>Phone number: <%= @owner.phone_number %></p>
 <p>Adopted animals:
-  <% if @owner.animals() == "" %>
-  <%= "None" %>
-  <% else %>
-  <%= @owner.animals.count() %>
+  <% if @animals.count == 0 %>
+    No animals.
+  <% end %>
+  <% for animal in @animals %>
+    <p>Name: <%= animal.name %></p>
   <% end %>
 </p>
 
