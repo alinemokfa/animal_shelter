@@ -90,7 +90,7 @@ class Animal
     sql = "SELECT * FROM owners WHERE id = $1"
     values = [@owner_id]
     results = SqlRunner.run(sql, values)
-      if results.empty?
+      if results.num_tuples.zero?
         return nil
       else
         owner_data = results[0]
