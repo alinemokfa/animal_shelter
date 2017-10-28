@@ -9,7 +9,7 @@ Owner.delete_all()
 owner_1 = Owner.new({
   'first_name' => 'Rose',
   'last_name' => 'Smith',
-  'image_url' => 'https://cdn.pixabay.com/photo/2017/02/16/23/10/smile-2072907_1280.jpg',
+  'image_url' => 'https://i.pinimg.com/736x/2b/dc/a4/2bdca4437360789ee3bda68e0631b167--hairstyles-for-short-hair-hairstyles-for-black-women.jpg',
   'address' => '14/8 Dream Road',
   'email_address' => 'rose_dream@coldmail.com',
   'phone_number' => '07566728009'

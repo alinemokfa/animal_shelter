@@ -11,7 +11,12 @@
     <div class="adoptions">
       <p> <img src="<%= animal.image_url %>" height="300px" width="250px"/>
       <p>Animal Name: <%= animal.name %></p>
-      <p>Adopted by: <%= animal.owner().pretty_name%> </p>
+      <p>Adopted by:
+        <% if animal.owner == nil %>
+        Not yet adopted
+        <% else %>
+        <%= animal.owner().pretty_name%> </p>
+        <% end %>
     </div>
 
   </div>

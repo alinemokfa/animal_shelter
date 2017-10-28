@@ -90,9 +90,13 @@ class Animal
     sql = "SELECT * FROM owners WHERE id = $1"
     values = [@owner_id]
     results = SqlRunner.run(sql, values)
-    owner_data = results[0]
-    owner = Owner.new(owner_data)
-    return owner
+      if results.empty?
+        return nil
+      else
+        owner_data = results[0]
+        owner = Owner.new(owner_data)
+        return owner
+      end
   end
 
   def self.find_in_search(search)
