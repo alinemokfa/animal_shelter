@@ -1,5 +1,4 @@
 require( 'pg' )
-require_relative('./config')
 
 class SqlRunner
 
