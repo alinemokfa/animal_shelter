@@ -98,6 +98,12 @@ footer ul{
   margin: 0 auto;
 }
 
+footer p{
+  color: white;
+  text-align: center;
+  font-size: 10px;
+}
+
 footer.menu {
   background-color: #666;
   overflow: auto;
