@@ -6,10 +6,10 @@ class SqlRunner
     begin
       # db = PG.connect({ dbname: 'animal_shelter', host: 'localhost' })
       db = PG.connect({dbname: ENV['DBNAME'],
-        host: ENV['HOST'],
-        port: 5432,
-        user: ENV['USER'],
-        password: ENV['PASSWORD']})
+        host: ENV['DBHOST'],
+        port: ENV['DBPORT'],
+        user: ENV['DBUSER'],
+        password: ENV['DBPASSWORD']})
       db.prepare( "query", sql )
       result = db.exec_prepared( "query", values )
     ensure
