@@ -103,8 +103,8 @@ class Animal
     sql = "SELECT * FROM animals WHERE
     name LIKE $1
     OR type LIKE $1
-    OR breed LIKE $1"
-    values = ["%#{search.capitalize}%"]
+    OR breed LIKE $1" #instead of = because it's a string
+    values = ["%#{search.capitalize}%"] # fuzzy search
     results = SqlRunner.run(sql, values)
     return results.map { |animal| Animal.new(animal)}
   end
