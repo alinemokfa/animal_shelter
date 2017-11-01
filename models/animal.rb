@@ -101,10 +101,10 @@ class Animal
 
   def self.find_in_search(search)
     sql = "SELECT * FROM animals WHERE
-    name = $1
-    OR type = $1
-    OR breed = $1"
-    values = [search.capitalize]
+    name LIKE $1
+    OR type LIKE $1
+    OR breed LIKE $1"
+    values = ["%#{search.capitalize}%"]
     results = SqlRunner.run(sql, values)
     return results.map { |animal| Animal.new(animal)}
   end

@@ -4,7 +4,11 @@ require_relative( '../models/animal.rb' )
 require_relative( '../models/owner.rb' )
 
 get '/animals' do
-  @animals = Animal.all()
+  if params['q']
+    @animals = Animal.find_in_search(params['q'])
+  else
+    @animals = Animal.all()
+  end
   erb ( :"animals/index" )
 end
 

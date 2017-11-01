@@ -1,5 +1,21 @@
 <div class="owner-container">
-  <h1>ALL OWNERS</h1>
+
+  <% if params['q'] %>
+    <h1>Search: <%= params['q'] %></h1>
+  <% else %>
+    <h1>ALL OWNERS</h1>
+  <% end %>
+
+  <div class="owner-form">
+   <form action="/owners" method="get">
+     <div class="field">
+       <input type="text" name="q" placeholder="Search...">
+       <button class="btn">Search</button>
+     </div>
+   </form>
+  </div>
+
+
   <div class="row">
 
 <% @owners.each do |owner| %>

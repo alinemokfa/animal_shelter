@@ -94,12 +94,12 @@ class Owner
 
   def self.find_in_search(search)
     sql = "SELECT * FROM owners WHERE
-    first_name = $1
-    OR last_name = $1
-    OR address = $1
-    OR email_address = $1
-    OR phone_number = $1"
-    values = [search.capitalize]
+    first_name LIKE $1
+    OR last_name LIKE $1
+    OR address LIKE $1
+    OR email_address LIKE $1
+    OR phone_number LIKE $1"
+    values = ["%#{search.capitalize}%"]
     results = SqlRunner.run(sql, values)
     return results.map { |owner| Owner.new(owner)}
   end

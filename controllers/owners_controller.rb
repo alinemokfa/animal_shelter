@@ -3,7 +3,11 @@ require('sinatra/contrib/all') if development?
 require_relative( '../models/owner.rb' )
 
 get '/owners' do
-  @owners = Owner.all()
+  if params['q']
+    @owners = Owner.find_in_search(params['q'])
+  else
+    @owners = Owner.all()
+  end
   erb ( :"owners/index" )
 end
 

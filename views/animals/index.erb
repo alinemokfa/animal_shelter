@@ -1,5 +1,21 @@
 <div class="animal-container">
-  <h1>ALL ANIMALS</h1>
+
+  <% if params['q'] %>
+      <h1>Search: <%= params['q'] %></h1>
+  <% else %>
+      <h1>ALL ANIMALS</h1>
+  <% end %>
+
+<div class="animal-form">
+ <form action="/animals" method="get">
+   <div class="field">
+     <input type="text" name="q" placeholder="Search...">
+     <button class="btn">Search</button>
+   </div>
+ </form>
+</div>
+
+
   <div class="row">
 
   <% @animals.each do |animal| %>
