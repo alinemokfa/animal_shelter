@@ -4,12 +4,6 @@
 
 First full-stack web application developed 4 weeks into CodeClan's 16 week software development course. Created in 5 days using native Ruby, TDD, REST/MVC, HTML, CSS and PostgreSQL.
 
-![Alt text](https://i.imgur.com/rPVsjOj.jpg "Screenshot of app") 
-
-![Alt text](https://i.imgur.com/d7ydOh6.jpg "ScreenshotII of app") 
-
-![Alt text](https://i.imgur.com/G1KJAXx.jpg "ScreenshotIII of app") 
-
 ## The brief:
 
 ```
